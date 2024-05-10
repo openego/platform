@@ -6,7 +6,6 @@ import BaseCard from "../presentational/baseCard";
 import CustomCard from "../presentational/customCard";
 import CustomTreeView from "./customTreeView";
 import LayoutActions from "./actions.js";
-import SearchBox from "./searchBox";
 import Grid from "@material-ui/core/Grid";
 
 
@@ -631,12 +630,7 @@ class Layout extends Component {
               direction="column"
               justifyContent="center"
             >
-              <div>
-                {<SearchBox
-                  searchHandler={this.searchHandler}
-                />}
-              </div>
-
+              
               {<CustomCard
                 nodeInfo={this.state.currentNode}
               />}
