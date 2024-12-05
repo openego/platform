@@ -107,11 +107,26 @@ if USE_LOEP:
 else:
     DBPEDIA_LOOKUP_SPARQL_ENDPOINT_URL = ""
 
-if not DEBUG:
-    AUTHENTICATION_BACKENDS = ['login.models.UserBackend', 'axes.backends.AxesBackend']
 
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 CORS_ORIGIN_ALLOW_ALL = True
 
 OEKG_SPARQL_ENDPOINT_URL = "http://localhost:3030/ds/sparql"
+
+SOCIALACCOUNT_PROVIDERS = {
+    "openid_connect": {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        "APPS": [{
+            "provider_id": "",
+            "name": "",
+            "client_id": "",
+            "secret": "",
+            "VERIFIED_EMAIL": True,
+            "EMAIL_AUTHENTICATION": True,
+            "settings": {"server_url": ""},
+        }]
+    }
+}
